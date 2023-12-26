@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+<div class="box" id="heading">
+  <h1 class="adjustment">
+   <%= listtitle %>
+  </h1>
+</div>
+<div class="box shadow">
+    <% for(let newValue of listitems){%>
+        <div class="item">
+            <input type="checkbox">
+<p><%= newValue %></p>
+        </div>
+    <% } %>
+</div>
+  <form class="form" name="item" action="/" method="post">
+    <input
+      type="text"
+      id="newvalue"
+      name="newitem"
+      placeholder="New Item"
+      autocomplete="off"
+    />
+    <button
+      type="submit"
+      name="list"
+      class="buttonstyle"
+      value="<%= listtitle %>"
+    >
+      +
+    </button>
+  </form>
+</div>
+
+<%- include("partials/footer.ejs")%>
